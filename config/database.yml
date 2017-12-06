@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: teddy-websocket_development
+  database: teddy-websocket_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
