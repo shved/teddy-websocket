@@ -15,7 +15,14 @@ App.test = App.cable.subscriptions.create "TestChannel",
 $ ->
   $input = $('input#message-input')
   $send = $('button#send')
-  console.log($input.val())
   $send.on('click', ->
     App.test.echo $input.val()
+    $input.val('')
   )
+
+  $input.keypress (e) ->
+    if e.which == 13
+      App.test.echo $input.val()
+      $input.val('')
+      false
+
