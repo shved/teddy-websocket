@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $input = $('input#message-input')
+  $send = $('button#send')
+  $send.on('click', ->
+    App.test.echo $input.val()
+    $input.val('')
+  )
+
+  $input.keypress (e) ->
+    if e.which == 13
+      App.test.echo $input.val()
+      $input.val('')
